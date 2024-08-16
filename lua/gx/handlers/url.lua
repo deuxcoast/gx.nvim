@@ -15,7 +15,7 @@ function M.handle(mode, line, _)
 
   -- match url without http(s)
   if not url then
-    pattern = "([a-zA-Z%d_/%-%.~@\\+#]+%.[a-zA-Z_/%%%-%.~@\\+#=?&:]+)"
+    pattern = "([a-zA-Z%d_/%-%.~@\\+#]+%.(!?nvim)[a-zA-Z_/%%%-%.~@\\+#=?&:]+)"
     url = helper.find(line, mode, pattern)
     if url then
       return "https://" .. url
